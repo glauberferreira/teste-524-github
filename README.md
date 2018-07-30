@@ -1,2 +1,2 @@
 # teste-524-github
-Repositório de testes da turma 524
+Este é o repositório de testes da turma 524 para a disciplina de Programação Web.
