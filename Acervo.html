@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
+<link rel="stylesheet" type="text/css" href="estilo.css">
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<!-- Última versão CSS compilada e minificada -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Tema opcional -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
+<!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<head>
+	<title>Acervo da Monitoria</title>
+</head>
+
+<body class="fundo container">
+
+	<!-- Fim da classe Modal!-->
+	<div class="topnav" id="myTopnav">
+		<a href="SegundaTela.html" class="tablink active" id="defaultOpen"><i class="fa fa-arrow-circle-left"></i> Portal Monitoria</a>
+		<a href="#news" class="tablink" onclick="openPage('Arq', this, '#FFD700')" ><i class="fa fa-archive"></i> Arquivos</a>
+		<a href="#contact" class="tablink" onclick="openPage('Horas', this, '#FFD700')"><i class="fa fa-calendar"></i> Horário</a>
+		<a href="#about" class="tablink" onclick="openPage('Agendado', this, '#FFD700')"><i class="far fa-clock"></i> Agenda</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	<!-- Inicio da classe Modal!-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content" >
+				<div class="modal-header" style="background-color: #FFD700;">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title"  id="myModalLabel" style="color:white">Por favor insira os dados corretamente</h4>
+				</div>
+				<div class="modal-body">
+
+					<div>
+						<div class="row">
+							<div class=" col-lg-5">
+								<h3>Nome da Monitoria</h3>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-1">
+							<h3>Monitor</h3>
+						</div>
+						<div class=" col-lg-offset-1 col-lg-3  ">
+							<h3>Professor</h3>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<h5>Nathalia Bernardo</h5>
+						</div>
+						<div class="col-lg-4">
+							<h5>Glauber Ferreira</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<h6>E-mail: <a>nathy@ifal.edu.br</a></h6>
+						</div>
+						<div class="col-lg-4">
+							<h6>E-mail: <a>glauber@ifal.edu.br</a></h6>
+						</div>
+					</div>
+					<form action="#">
+						<div class="row">
+							<div class="col-sm-6">
+								<h3>Dados do Aluno</h3>
+								<label for="nome"><i class="fa fa-user"></i> Nome</label>
+								<input type="text" id="nome" name="nomeUser" placeholder="Aluno Júnior">
+								<label for="email"><i class="fa fa-envelope"></i> Email</label>
+								<input type="text" id="email" name="email" placeholder="aluno@exemplo.com">
+								<label for="cel">Número de Celular</label>
+								<input type="text" id="cel" name="telefone" placeholder="9 1245-6789">
+								<label for="cidade"><i class="fas fa-university"></i> Cidade</label>
+								<input type="text" id="city" name="city" placeholder="Palmeira dos Índios">
+							</div>
+							<div class="col-sm-6">
+								<h3>Dados de Agendamento</h3>
+								<div class="col-sm-12">
+									<label for="turma">Turma</label>
+									<select id="turma" name="selecaoTurma">
+										<option value="vazio">Selecione</option>
+										<option value="calouro">521</option>
+										<option value="BiCalouro">522</option>
+										<option value="QuaseVeterano">523</option>
+										<option value="Veterano">524</option>
+									</select>
+									<label for="expmonth">Dia da monitoria</label>
+									<input type="date" id="data" name="data" placeholder="01/01/2018">
+									<div class="row">
+										<div class="col-sm-6">
+											<label for="turno">Turno</label>
+											<select id="turno" name="selecaoTurno">
+												<option value="manha">Matutino</option>
+												<option value="tarde">Vespertino</option>
+											</select>
+											<div class="col-sm-6">
+												<label for="hora">Horário </label>
+												<input type="time" id="hora" name="hora"  placeholder="8:00">
+											</div>
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-12">
+											<label for="subject">Dúvida</label>
+											<textarea id="subject" name="subject" placeholder="Escreva aqui as suas dúvidas..." style="height:150px"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<div class="row">
+						<div class="col-sm-offset-8 col-sm-4">
+							<button type="button" class="btn " data-dismiss="modal"><i class="far fa-calendar-check"></i> Agendar Monitoria</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-offset-8 col-sm-4">
+						<button type="button" class="btn " data-dismiss="modal"><i class="far fa-times-circle"></i> Cancelar</button>
+					</div>
+				</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Fim da classe Modal!-->
+
+		<div id="Info" class="tabcontent">
+			<h3>Estou testando</h3>
+			<p>Esrtou colocando essas cores para que eu possa ter ideia de espaçamento.</p>
+		</div>
+
+		<div id="Arq" class="tabcontent">
+			<div style="overflow-x:auto;">
+				<table>
+					<tr>
+						<th>PDF</th>
+						<th>MDF</th>
+						<th>SLIDE</th>
+						<th>VIDEOS</th>
+						<th>SITES RECOMENDADOS</th>
+
+					</tr>
+					<tr>
+						<td><a href="#"><i class="fas fa-file-download"></i> exercicio1.pdf</a></td>
+						<td><a href="#"><i class="fas fa-file-download"></i> projeto.mdf</a></td>
+						<td><a href="#"><i class="fas fa-file-download"></i> Aula1.pptx</a></td>
+						<td><a href="#"><i class="fas fa-download"></i> tutorial</a></td>
+						<td><a href="#">estudo.com.br</a></td>
+
+
+
+					</tr>
+					<tr>
+						<td><a href="#"><i class="fas fa-file-download"></i> Lista.pdf</a></td>
+						<td><a href="#"><i class="fas fa-file-download"></i> projeto2.mdf</a></td>
+						<td><a href="#"><i class="fas fa-file-download"></i> Aula2.pptx</a></td>
+						<td><a href="#"><i class="fas fa-download"></i> resolvendo exercicio</a></td>
+						<td><a href="#">mesalva.com.br</a></td>
+
+					</tr>
+					<tr>
+						<td><a href="#"><i class="fas fa-file-download"></i> ListaExercicio.pdf</a></td>
+						<td><a href="#"><i class="fas fa-file-download"></i> projeto3.mdf</a></td>
+						<td><a href="#"><i class="fas fa-file-download"></i> Aula3.pptx</a></td>
+						<td><a href="#"><i class="fas fa-download"></i>revisao</a></td>
+						<td><a href="#">soescola.com.br</a></td>
+
+					</tr>
+				</table>
+			</div>
+
+		</div>
+
+		<div id="Agendado" class="tabcontent">
+			<h1 class="text-center">Monitorias Agendadas</h1>
+
+			<div class="row">
+				<div class=" col-lg-5">
+					<h3>Nome da Monitoria</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-1">
+					<h3>Monitor</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-2">
+					<h5>Emanuel</h5>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-offset-1 col-sm-6">
+					<div style="overflow-x:auto;">
+						<table>
+							<tr>
+								<th>Nome do aluno</th>
+								<th>Turma</th>
+								<th>Horário da Monitoria</th>
+								<th>Data</th>
+								<th>Laboratório</th>
+								<td>Assunto</td>
+
+							</tr>
+							<tr>
+								<td>Júnior Nascimento</td>
+								<td>523</td>
+								<td>8:30</td>
+								<td>30/08/2018</td>
+								<td>71</td>
+								<td>HTML</td>
+							</tr>
+
+						</table>
+					</div>
+				</div>
+			</div>
+			<hr><br>
+
+			<!--agendado 2-->
+			<div class="row">
+				<div class=" col-lg-5">
+					<h3>Nome da Monitoria</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-1">
+					<h3>Monitor</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-2">
+					<h5>Pedro Almeida</h5>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-offset-1 col-sm-6">
+					<div style="overflow-x:auto;">
+						<table>
+							<tr>
+								<th>Nome do aluno</th>
+								<th>Turma</th>
+								<th>Horário da Monitoria</th>
+								<th>Data</th>
+								<th>Laboratório</th>
+								<td>Assunto</td>
+
+							</tr>
+							<tr>
+								<td>Sophia Almeida</td>
+								<td>524</td>
+								<td>10:00</td>
+								<td>27/08/2018</td>
+								<td>66</td>
+								<td>Orientação a Objetos</td>
+							</tr>
+
+						</table>
+					</div>
+				</div>
+			</div>
+			<hr><br>
+
+			<!--agendado 3-->
+			<div class="row">
+				<div class=" col-lg-5">
+					<h3>Nome da Monitoria</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-1">
+					<h3>Monitor</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-2">
+					<h5>Nathalia Bernardo</h5>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-offset-1 col-sm-6">
+					<div style="overflow-x:auto;">
+						<table>
+							<tr>
+								<th>Nome do aluno</th>
+								<th>Turma</th>
+								<th>Horário da Monitoria</th>
+								<th>Data</th>
+								<th>Laboratório</th>
+								<td>Assunto</td>
+
+							</tr>
+							<tr>
+								<td>Eithor Almeida</td>
+								<td>521</td>
+								<td>9:00</td>
+								<td>20/08/2018</td>
+								<td>71</td>
+								<td>Funções Python</td>
+							</tr>
+
+						</table>
+					</div>
+				</div>
+			</div>
+			<hr><br>
+
+			<br>
+			<!-- Inicio da classe Modal!-->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content" >
+						<div class="modal-header" style="background-color: #FFD700;">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title"  id="myModalLabel" style="color:white">Por favor insira os dados corretamente</h4>
+						</div>
+						<div class="modal-body">
+
+							<div>
+								<div class="row">
+									<div class=" col-lg-5">
+										<h3>Nome da Monitoria</h3>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-1">
+									<h3>Monitor</h3>
+								</div>
+								<div class=" col-lg-offset-1 col-lg-3  ">
+									<h3>Professor</h3>
+								</div>
+
+							</div>
+							<div class="row">
+								<div class="col-lg-2">
+									<h5>Nathalia Bernardo</h5>
+								</div>
+								<div class="col-lg-4">
+									<h5>Glauber Ferreira</h5>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-2">
+									<h6>E-mail: <a>nathy@ifal.edu.br</a></h6>
+								</div>
+								<div class="col-lg-4">
+									<h6>E-mail: <a>glauber@ifal.edu.br</a></h6>
+								</div>
+							</div>
+							<form action="#">
+								<div class="row">
+									<div class="col-sm-6">
+										<h3>Dados do Aluno</h3>
+										<label for="nome"><i class="fa fa-user"></i> Nome</label>
+										<input type="text" id="nome" name="nomeUser" placeholder="Aluno Júnior">
+										<label for="email"><i class="fa fa-envelope"></i> Email</label>
+										<input type="text" id="email" name="email" placeholder="aluno@exemplo.com">
+										<label for="cel">Número de Celular</label>
+										<input type="text" id="cel" name="telefone" placeholder="9 1245-6789">
+										<label for="cidade"><i class="fas fa-university"></i> Cidade</label>
+										<input type="text" id="city" name="city" placeholder="Palmeira dos Índios">
+									</div>
+									<div class="col-sm-6">
+										<h3>Dados de Agendamento</h3>
+										<div class="col-sm-12">
+											<label for="turma">Turma</label>
+											<select id="turma" name="selecaoTurma">
+												<option value="vazio">Selecione</option>
+												<option value="calouro">521</option>
+												<option value="BiCalouro">522</option>
+												<option value="QuaseVeterano">523</option>
+												<option value="Veterano">524</option>
+											</select>
+											<label for="expmonth">Dia da monitoria</label>
+											<input type="date" id="data" name="data" placeholder="01/01/2018">
+											<div class="row">
+												<div class="col-sm-6">
+													<label for="turno">Turno</label>
+													<select id="turno" name="selecaoTurno">
+														<option value="manha">Matutino</option>
+														<option value="tarde">Vespertino</option>
+													</select>
+													<div class="col-sm-6">
+														<label for="hora">Horário </label>
+														<input type="time" id="hora" name="hora"  placeholder="8:00">
+													</div>
+												</div>
+											</div><br>
+											<div class="row">
+												<div class="col-sm-12">
+													<label for="subject">Dúvida</label>
+													<textarea id="subject" name="subject" placeholder="Escreva aqui as suas dúvidas..." style="height:150px"></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default btn-success" data-dismiss="modal"><i class="far fa-calendar-check"></i> Agendar Monitoria</button>
+							<button type="button" class="btn btn-default btn-danger" data-dismiss="modal"><i class="far fa-times-circle"></i> Cancelar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Fim da classe Modal!-->
+
+			<hr style="background-color:black">
+			<div class="row">
+				<div class="col-sm-offset-10 col-sm-2">
+					<button data-toggle="modal" data-target="#myModal">Agendar Monitoria</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="Horas" class="tabcontent">
+			<div class="row" style="overflow-x:auto;">
+				<div class="col-sm-offset-3 col-sm-5">
+					<div class="row">
+						<h4>Em azul estão marcados os dias que o monitor estará em sala de aula</h4>
+						<div class="col-sm-2"
+						<p style="background-color:blue;">-</p>
+					</div>
+				</div>
+				<h2>Horário</h2>
+				<p>Conferir a seguir os dias e horas disponivei para sua monitoria</p>
+				<table class="table table-hover fontetabela">
+					<thead>
+						<tr class="fontetabela">
+							<th>Segunda</th>
+							<th>Terça</th>
+							<th>Quarta</th>
+							<th>Quinta</th>
+							<th>Sexta</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>8:00/66</td>
+							<td style="background-color:blue;">8:00/66</td>
+							<td>8:00/66</td>
+							<td>8:00/66</td>
+							<td>sem</td>
+						</tr>
+						<tr>
+							<td>10:00/71</td>
+							<td style="background-color:blue;">10:00/66</td>
+							<td>10:00/71</td>
+							<td style="background-color:blue;">10:00/71</td>
+							<td>sem</td>
+						</tr>
+						<tr>
+							<td>11:30/avulso</td>
+							<td>11:30/66</td>
+							<td>11:30/avulso</td>
+							<td style="background-color:blue;">11:30/avulso</td>
+							<td>sem</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+
+	</div>
+
+
+</div>
+
+
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablink");
+	for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].style.backgroundColor = "";
+	}
+	document.getElementById(pageName).style.display = "block";
+	elmnt.style.backgroundColor = color;
+
+}
+</script>
+
+<script>
+$('#exampleModal').on('show.bs.modal', function (event) {
+	var button = $(event.relatedTarget) // Button that triggered the modal
+	var recipient = button.data('whatever') // Extract info from data-* attributes
+	// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+	// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+	var modal = $(this)
+	modal.find('.modal-title').text('New message to ' + recipient)
+	modal.find('.modal-body input').val(recipient)
+})
+</script>
+<!-- Principal JavaScript do Bootstrap
+================================================== -->
+<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Última versão JavaScript compilada e minificada -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>
